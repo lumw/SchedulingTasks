@@ -1,0 +1,6 @@
+*.jar
+*.iml
+*.docx
+*.class
+.idea/
+out/
