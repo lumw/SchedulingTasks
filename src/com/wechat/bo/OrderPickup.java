@@ -110,17 +110,17 @@ public class OrderPickup {
 
         StringBuffer sb = new StringBuffer();
 
-        sb.append("订单ID " + order.getOrderID());
-        sb.append(" 订单总价 " + order.getTotalPrice());
-        sb.append(" 配送费 " + order.getFreight());
-        sb.append(" 联系人姓名 " + order.getName());
-        sb.append(" 送货地址 " + order.getAddress());
-        sb.append(" 联系人电话 " + order.getTelphone());
-        sb.append(" 其他信息 " + order.getRemark() + "\n");
-        sb.append(" 订单商品信息：" + "\n");
+        sb.append("订单ID:" + order.getOrderID() + "\n");
+        sb.append("订单总价:" + order.getTotalPrice() + "\n");
+        sb.append("配送费:" + order.getFreight() + "\n");
+        sb.append("联系人:" + order.getName() + "\n");
+        sb.append("送货地址:" + order.getAddress() + "\n");
+        sb.append("联系电话:" + order.getTelphone() + "\n");
+        sb.append("其他信息:" + order.getRemark() + "\n");
+        sb.append("订单商品信息:" + "\n");
 
         for(Object o : list){
-            sb.append("商品名称" + ((OrderGoods)o).getGoodsName() + "商品单价" + ((OrderGoods) o).getPrice() + "商品数量" + ((OrderGoods) o).getQuantity() + "\n");
+            sb.append("名称 " + ((OrderGoods)o).getGoodsName() + " 单价 " + ((OrderGoods) o).getPrice() + " 数量 " + ((OrderGoods) o).getQuantity() + "\n");
         }
 
 

@@ -8,7 +8,6 @@
 
     <!-- job的配置开始 -->
     <bean id="OrderInfomJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-
         <!--false表示等上一个任务执行完后再开启新的任务-->
         <property name="concurrent" value="false"/>
         <property name="targetObject">
@@ -20,6 +19,7 @@
     </bean>
     <!-- job的配置结束 -->
 
+
     <!-- 调度的配置开始 -->
     <bean id="crontestJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail">
@@ -30,6 +30,7 @@
         </property>
     </bean>
     <!-- 调度的配置结束 -->
+
 
     <!-- 启动触发器的配置开始 -->
     <bean name="startQuertz" lazy-init="false" autowire="no"

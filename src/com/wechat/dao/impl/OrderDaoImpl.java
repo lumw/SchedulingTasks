@@ -108,7 +108,7 @@ public class OrderDaoImpl implements OrderDao {
      */
     public void updateOrderStatus(String orderID, int status) throws SQLException {
 
-        String sql = "update order_info_base_t set status = "+ status + " where orderID = " + orderID;
+        String sql = "update order_info_base_t set status = "+ status + " where orderID = " + "'" + orderID.trim() + "'";
         log.debug("exec sql " + sql);
 
         stmt = conn.prepareStatement(sql);
@@ -124,7 +124,7 @@ public class OrderDaoImpl implements OrderDao {
      */
     public List<OrderGoods> getOrderGoodsInfo(String orderID) throws SQLException {
 
-        String sql = "select * from order_info_goods_t where orderID = " + orderID.trim();
+        String sql = "select * from order_info_goods_t where orderID = " + "'" + orderID.trim() + "'";
         log.debug("exec sql " + sql);
 
         stmt = conn.prepareStatement(sql);
